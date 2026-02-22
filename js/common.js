@@ -4,17 +4,17 @@ $(function () {
 
     /* ---------------------------------
         ★ 環境ごとのベースパス設定
-        ローカルでは /HOTOME
+        ローカルでは /hotome
         GitHub Pages / 本番ではリポジトリ名を付与
         独自ドメインでもそのまま動く
     --------------------------------- */
 
-    const repoName = "/hotome"; // GitHub Pages のリポジトリ名
+    const repoName = "/hotome"; // GitHub Pages のリポジトリ名（大文字小文字注意）
     const isLocal = location.hostname === "localhost" || location.hostname.startsWith("192.168.");
     const isGitHub = location.hostname.endsWith("github.io");
 
-    // ローカル → /HOTOME / GitHub → /hotome / 独自ドメイン → ""
-    const basePath = isLocal ? "/HOTOME" : (isGitHub ? repoName : "");
+    // ローカル → /hotome / GitHub → /hotome / 独自ドメイン → ""
+    const basePath = isLocal ? "/hotome" : (isGitHub ? repoName : "");
 
     /* ---------------------------------
         header / footer 読み込み
@@ -40,6 +40,22 @@ $(function () {
                 $(this).attr("href", basePath + href);
             }
         });
+
+        /* ---------------------------------
+            ★ header/footer 内の全ルート相対リンクを補正
+            ※ link/script/img なども対象
+        --------------------------------- */
+        function fixAllRootPaths($context) {
+            $context.find("link[href^='/'], script[src^='/'], img[src^='/'], a[href^='/']").each(function () {
+                const $el = $(this);
+                if ($el.is("link")) $el.attr("href", basePath + $el.attr("href"));
+                if ($el.is("script") || $el.is("img")) $el.attr("src", basePath + $el.attr("src"));
+                if ($el.is("a")) $el.attr("href", basePath + $el.attr("href"));
+            });
+        }
+
+        fixAllRootPaths($(document)); // ページ全体に適用
+        fixAllRootPaths($("#header")); // header 内も確実に適用
 
         /* ---------------------------------
             カレントページ判定
@@ -75,6 +91,19 @@ $(function () {
             }
         });
 
+    });
+
+    $("#footer").load(basePath + "/parts/footer.html", function () {
+        // footer 読み込み後にもルート相対リンク補正
+        function fixFooterPaths() {
+            $("#footer").find("link[href^='/'], script[src^='/'], img[src^='/'], a[href^='/']").each(function () {
+                const $el = $(this);
+                if ($el.is("link")) $el.attr("href", basePath + $el.attr("href"));
+                if ($el.is("script") || $el.is("img")) $el.attr("src", basePath + $el.attr("src"));
+                if ($el.is("a")) $el.attr("href", basePath + $el.attr("href"));
+            });
+        }
+        fixFooterPaths();
     });
 
     /* ---------------------------------
@@ -121,16 +150,8 @@ $(function () {
         $pageTop.css({ bottom: bottomValue + "px" });
     }
 
-    // スクロール・リサイズで呼び出し
-    $(window).on("scroll resize", updatePageTop);
-
-    // フッター読み込み後に初回計算
-    $("#footer").load(basePath + "/parts/footer.html", function () {
-        updatePageTop();
-    });
-
-    // ページ読み込み時にも更新
-    $(window).on("load", updatePageTop);
+    // スクロール・リサイズ・ロードで呼び出し
+    $(window).on("scroll resize load", updatePageTop);
 
     /* ---------------------------------
         ★ 戻るボタン対策（bfcache対応）
