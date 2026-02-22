@@ -42,22 +42,6 @@ $(function () {
         });
 
         /* ---------------------------------
-            ★ header/footer 内の全ルート相対リンクを補正
-            ※ link/script/img なども対象
-        --------------------------------- */
-        function fixAllRootPaths($context) {
-            $context.find("link[href^='/'], script[src^='/'], img[src^='/'], a[href^='/']").each(function () {
-                const $el = $(this);
-                if ($el.is("link")) $el.attr("href", basePath + $el.attr("href"));
-                if ($el.is("script") || $el.is("img")) $el.attr("src", basePath + $el.attr("src"));
-                if ($el.is("a")) $el.attr("href", basePath + $el.attr("href"));
-            });
-        }
-
-        fixAllRootPaths($(document)); // ページ全体に適用
-        fixAllRootPaths($("#header")); // header 内も確実に適用
-
-        /* ---------------------------------
             カレントページ判定
         --------------------------------- */
 
@@ -93,18 +77,7 @@ $(function () {
 
     });
 
-    $("#footer").load(basePath + "/parts/footer.html", function () {
-        // footer 読み込み後にもルート相対リンク補正
-        function fixFooterPaths() {
-            $("#footer").find("link[href^='/'], script[src^='/'], img[src^='/'], a[href^='/']").each(function () {
-                const $el = $(this);
-                if ($el.is("link")) $el.attr("href", basePath + $el.attr("href"));
-                if ($el.is("script") || $el.is("img")) $el.attr("src", basePath + $el.attr("src"));
-                if ($el.is("a")) $el.attr("href", basePath + $el.attr("href"));
-            });
-        }
-        fixFooterPaths();
-    });
+    $("#footer").load(basePath + "/parts/footer.html");
 
     /* ---------------------------------
         ★ ページトップボタン（アレンジ版）
