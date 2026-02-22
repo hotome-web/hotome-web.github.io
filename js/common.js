@@ -9,12 +9,12 @@ $(function () {
         独自ドメインでもそのまま動く
     --------------------------------- */
 
-    const repoName = "/hotome-web"; // GitHub Pages のリポジトリ名
+    const repoName = "/hotome"; // GitHub Pages のリポジトリ名
     const isLocal = location.hostname === "localhost" || location.hostname.startsWith("192.168.");
     const isGitHub = location.hostname.endsWith("github.io");
 
-    // ローカル → /hotome / GitHub → /hotome-web / 独自ドメイン → ""
-    const basePath = isLocal ? "/hotome" : (isGitHub ? repoName : "");
+    // ローカル → /HOTOME / GitHub → /hotome / 独自ドメイン → ""
+    const basePath = isLocal ? "/HOTOME" : (isGitHub ? repoName : "");
 
     /* ---------------------------------
         header / footer 読み込み
