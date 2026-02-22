@@ -3,18 +3,18 @@
 $(function () {
 
     /* ---------------------------------
-        ★ 環境ごとのルートパス設定
-        ローカルでは localhost や LAN IP を基準
+        ★ 環境ごとのベースパス設定
+        ローカルでは /HOTOME
         GitHub Pages / 本番ではリポジトリ名を付与
         独自ドメインでもそのまま動く
     --------------------------------- */
 
-    const repoName = "/hotome"; // GitHub Pages の場合のリポジトリ名
+    const repoName = "/hotome"; // GitHub Pages のリポジトリ名
     const isLocal = location.hostname === "localhost" || location.hostname.startsWith("192.168.");
     const isGitHub = location.hostname.endsWith("github.io");
 
-    // ローカル → "" / GitHub → "/hotome" / 独自ドメイン → ""
-    const basePath = isLocal ? "" : (isGitHub ? repoName : "");
+    // ローカル → /HOTOME / GitHub → /hotome / 独自ドメイン → ""
+    const basePath = isLocal ? "/HOTOME" : (isGitHub ? repoName : "");
 
     /* ---------------------------------
         header / footer 読み込み
@@ -50,7 +50,6 @@ $(function () {
         const currentDir = segments.length === 0 ? "home" : segments[0];
 
         $(".g-nav a").each(function () {
-
             const href = $(this).attr("href");
             const linkPath = href.replace(basePath, "");
             const linkDir = linkPath === "/" ? "home" : linkPath.split("/").filter(Boolean)[0];
@@ -58,7 +57,6 @@ $(function () {
             if (currentDir === linkDir) {
                 $(this).addClass("current");
             }
-
         });
 
         /* ---------------------------------
@@ -106,6 +104,9 @@ $(function () {
         const footerTop = $footer.offset().top;
         const pageBottom = scrollTop + windowHeight;
 
+        // フッター被り防止（PC → 30、SP → 20）
+        let bottomValue = $(window).width() >= 992 ? 30 : 20;
+
         // 1画面分スクロールしたら出現（1.0にすると完全に1画面分。画面高さが900pxなら0.1は90pxということ）
         if (scrollTop >= windowHeight * 0.2) {
             $(".page-top").removeClass("DownMove").addClass("UpMove");
@@ -113,20 +114,8 @@ $(function () {
             $(".page-top").removeClass("UpMove").addClass("DownMove");
         }
 
-        // フッター被り防止
-        let bottomValue;
-
-        // 画面幅によって通常bottomを変更
-        if ($(window).width() >= 992) {
-            bottomValue = 30; // PC
-        } else {
-            bottomValue = 20; // スマホ
-        }
-
         // フッターに被った場合の調整
-        if (pageBottom > footerTop) {
-            bottomValue += pageBottom - footerTop;
-        }
+        if (pageBottom > footerTop) bottomValue += pageBottom - footerTop;
 
         // 最終的に適用
         $pageTop.css({ bottom: bottomValue + "px" });
@@ -154,7 +143,6 @@ $(function () {
 
         // body固定解除
         $("body").css({ height: "", overflow: "" });
-
     });
 
 });
