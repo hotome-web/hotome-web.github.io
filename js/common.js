@@ -3,15 +3,18 @@
 $(function () {
 
     /* ---------------------------------
-        ★ 環境ごとのベースパス設定
-        ローカルでは "/HOTOME"
-        本番では "" にする
-        ※ スマホ実機(LAN IP)もローカル扱い
+        ★ 環境ごとのルートパス設定
+        ローカルでは localhost や LAN IP を基準
+        GitHub Pages / 本番ではリポジトリ名を付与
+        独自ドメインでもそのまま動く
     --------------------------------- */
 
+    const repoName = "/hotome"; // GitHub Pages の場合のリポジトリ名
     const isLocal = location.hostname === "localhost" || location.hostname.startsWith("192.168.");
-    const basePath = isLocal ? "/HOTOME" : "";
+    const isGitHub = location.hostname.endsWith("github.io");
 
+    // ローカル → "" / GitHub → "/hotome" / 独自ドメイン → ""
+    const basePath = isLocal ? "" : (isGitHub ? repoName : "");
 
     /* ---------------------------------
         header / footer 読み込み
@@ -37,7 +40,6 @@ $(function () {
                 $(this).attr("href", basePath + href);
             }
         });
-
 
         /* ---------------------------------
             カレントページ判定
@@ -76,9 +78,6 @@ $(function () {
         });
 
     });
-
-
-
 
     /* ---------------------------------
         ★ ページトップボタン（アレンジ版）
@@ -145,7 +144,7 @@ $(function () {
     $(window).on("load", updatePageTop);
 
     /* ---------------------------------
-    ★ 戻るボタン対策（bfcache対応）
+        ★ 戻るボタン対策（bfcache対応）
     --------------------------------- */
     window.addEventListener("pageshow", function () {
 
@@ -157,6 +156,5 @@ $(function () {
         $("body").css({ height: "", overflow: "" });
 
     });
-
 
 });
