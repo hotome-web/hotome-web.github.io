@@ -1,0 +1,390 @@
+/*----------------------------------------
+	このCSSファイルにはBLOG（blog/index.html）に使用されるCSSを記載する
+----------------------------------------*/
+
+.filter-buttons {
+    width: 100%;
+    position: relative;
+    display: block;
+}
+
+.filter-toggle {
+    border-width: 1.5px;
+    border-radius: 4px;
+}
+
+.filter-btn {
+    width: 100%;
+    font-size: 1.4rem;
+    text-align: left;
+    border-color: #aaa;
+    background-color: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    transition: background-color 0.2s ease;
+}
+
+.filter-year-group .filter-btn.active {
+    background-color: rgba(48, 48, 48, 0.15);
+    pointer-events: none; /* active中のものには触れないように */
+}
+
+/*========= PC用：hover =========*/
+@media (hover: hover) and (pointer: fine) {
+    .filter-year-group > .filter-btn:hover {
+        background-color: rgba(48, 48, 48, 0.08);
+    }
+}
+/*========= スマホ用：タップ中だけ =========*/
+.filter-year-group > .filter-btn:active {
+    background-color: rgba(48, 48, 48, 0.08);
+}
+/*========= ここまで =========*/
+
+
+/* ▼ タブレット / 小型ノートPC向け （768px以上） */
+@media (min-width: 768px) {
+    .filter-buttons {
+        width: 200px;
+        margin-left: auto;
+    }
+}
+
+/*========= 矢印（∨・∧） =========*/
+.arrow {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    transform: translateY(-50%);
+    transition: transform 0.3s cubic-bezier(.4, 0, .2, 1);
+}
+
+/* 線 */
+.arrow::before,
+.arrow::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 2px;
+    background-color: #686868;
+    border-radius: 1px;
+    top: 50%;
+    left: 50%;
+}
+
+/* 通常時 → ∨ */
+.arrow::before {
+    transform: translate(-80%, -50%) rotate(45deg);
+}
+
+.arrow::after {
+    transform: translate(-20%, -50%) rotate(-45deg);
+}
+
+/* 開く時 → ∧ */
+.filter-buttons.is-open .arrow {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+/*========= ドロップダウンリスト（アコーディオン） =========*/
+.filter-year-group {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    z-index: 10;
+    /* ↓ アコーディオンのモーション ↓ */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.35s ease, opacity 0.15s ease 0.25s; /* 閉じるとき */
+}
+
+.filter-buttons.is-open .filter-year-group {
+    max-height: 300px; /* 中身が収まる十分な高さにする。中身が増えたら調整してください。 */
+    opacity: 1;
+    transition: max-height 0.45s ease, opacity 0.15s ease; /* 開くとき */
+}
+
+.filter-year-group .filter-btn {
+    border-bottom: 1px solid #eee;
+}
+
+.filter-year-group .filter-btn:last-child {
+    border-bottom: none;
+}
+
+/*----------------------------------------
+	ブログカード
+----------------------------------------*/
+
+.blog {
+    margin-top: 50px;
+}
+
+.blog-card {
+    border-bottom: 1.5px solid #bbb;
+}
+
+/*========= PC用：hover =========*/
+@media (hover: hover) and (pointer: fine) {
+    .blog-card > a:hover .card-inner {
+        border-radius: 8px;
+        background-color: rgba(222, 228, 230, 0.3);
+    }
+
+    .blog-card > a:hover .thumbnail {
+        opacity: 0.75;
+    }
+}
+/*========= スマホ用：タップ中だけ =========*/
+.blog-card > a:active .card-inner {
+    border-radius: 8px;
+    background-color: rgba(222, 228, 230, 0.3);
+}
+
+.blog-card > a:active .thumbnail {
+    opacity: 0.75;
+}
+/*========= ここまで =========*/
+
+.card-inner {
+    display: flex;
+    gap: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    transition: background-color 0.2s ease;
+}
+
+.thumbnail {
+    width: 45%;
+    aspect-ratio: 16 / 9; /* 16:9 に固定 */
+    object-fit: cover;
+    border-radius: 4px;
+    /* align-self: flex-start; */ /* スマホ版はあえて使わない方が綺麗かも。 */
+    flex-shrink: 0; /* サムネイルの領域が潰されないように */
+    transition: opacity 0.2s ease;
+}
+
+.article-header {
+    flex-grow: 1;
+}
+
+.date {
+    display: block;
+    width: 90px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 50px;
+    background-color: #DEE4E6;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.title {
+    font-weight: 600;
+    margin-top: 5px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* 2行を超えたら「…」表示にする */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.5;
+    max-height: calc(1.5em * 2);
+    overflow-wrap: break-word; /* 英単語等のための保険 */
+    word-break: break-word; /* 英単語等のための保険 */
+}
+
+
+/* ▼ スマホ（大） / 小型タブレット向け (540px以上） */
+@media (min-width: 540px) {
+    .date {
+        width: 100px;
+        font-size: 1.3rem;
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }
+
+    .title {
+        font-weight: 600;
+        margin-top: 8px;
+        -webkit-line-clamp: 3; /* 3行を超えたら「…」表示にする */
+        max-height: calc(1.5em * 3);
+    }
+}
+
+/* ▼ タブレット / 小型ノートPC向け （768px以上） */
+@media (min-width: 768px) {
+    .blog {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        /* memo: repeat（同じパターンを繰り返す） */
+        /* memo: 3（列は必ず3列まで） */
+        /* memo: minmax（0pxまで縮んでもOK（レスポンシブ途中なので関係ない）、残りスペースに応じて伸びる） */
+        row-gap: 0;
+        column-gap: 20px;
+    }
+
+    .card-inner {
+        flex-direction: column;
+        height: 100%;
+        gap: 12px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .thumbnail {
+        width: 100%;
+    }
+}
+
+/* ▼ デスクトップPC向け (992px以上) */
+@media (min-width: 992px) {
+    .blog {
+        column-gap: 35px;
+    }
+
+    .card-inner {
+        gap: 15px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .date {
+        width: 110px;
+        font-size: 1.4rem;
+        padding-top: 3px;
+        padding-bottom: 3px;
+    }
+
+    .title {
+        font-size: 1.65rem;
+        margin-top: 10px;
+        -webkit-line-clamp: 4; /* 4行を超えたら「…」表示にする */
+        line-height: 1.6;
+        max-height: calc(1.6em * 4);
+    }
+}
+
+/*----------------------------------------
+	ページネーション
+----------------------------------------*/
+
+.pagination {
+    margin-top: 30px;
+}
+
+.pagination-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.pagination-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5px;
+    padding-bottom: 6px;
+    padding-left: 12.3px;
+    padding-right: 12.3px;
+    background-color: #DEE4E6;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.pagination-btn.active {
+    font-weight: 500;
+    background-color: #627B86;
+    color: #fefdfc;
+    pointer-events: none;
+}
+
+/*========= PC用：hover =========*/
+@media (hover: hover) and (pointer: fine) {
+    .pagination-btn:hover {
+        background-color: #c5cfd3;
+    }
+}
+/*========= スマホ用：タップ中だけ =========*/
+.pagination-btn:active {
+    background-color: #c5cfd3;
+}
+/*========= ここまで =========*/
+
+
+/* 前へのアイコン */
+.prev {
+    width: 8px;
+    height: 10px;
+    display: inline-block;
+    background-image: url("data:image/svg+xml;utf8,\ <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>\ <polyline points='15 6 9 12 15 18'/>\ </svg>");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 12.5px;
+}
+
+/* 次へのアイコン */
+.next {
+    width: 8px;
+    height: 12px;
+    display: inline-block;
+    background-image: url("data:image/svg+xml;utf8,\ <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>\ <polyline points='9 6 15 12 9 18'/>\ </svg>");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 12.5px;
+}
+
+/* 今何ページ目か */
+.pagination-info {
+    font-size: 1.25rem;
+    text-align: center;
+    color: #646464;
+    margin-top: 15px;
+}
+
+.no-article {
+    display: none;
+    text-align: center;
+}
+
+
+
+/* ▼ タブレット / 小型ノートPC向け （768px以上） */
+@media (min-width: 768px) {
+    .pagination {
+        margin-top: 40px;
+    }
+}
+
+/* ▼ デスクトップPC向け (992px以上) */
+@media (min-width: 992px) {
+    .pagination {
+        margin-top: 45px;
+    }
+}
+
+
+/* レスポンシブ1140pxまで調整しました（2026.1.23。10:23） */
+/* レイアウト面はOKとします。 */
+
+/* 記事の絞り込み等のJSはまだ着手していないので、他のページのレイアウト作業が終わり次第進める。 */
+/* メモ：スマホ版は1ページ6記事まで、PC版は1ページ12記事までが良い感じかも。 */
+
+/* ページネーションで移動した先の記事を見た後に、ブラウザの戻るボタンで戻った時に、blogのhtml.indexではなくて、直前のページネーションのページ？に戻ることができたりするのか。これができると操作面のストレスが軽減されそう。 */
+/* 「すべての記事」のボタン、もし年数が増えた場合、縦にどんどん長くなるので、その場合ボタン内でスクロールできるといい感じ。任天堂のページ（https: //www.nintendo.com/jp/topics/list）参考になる！ */

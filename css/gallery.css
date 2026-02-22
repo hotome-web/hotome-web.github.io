@@ -1,0 +1,398 @@
+/*----------------------------------------
+	このCSSファイルにはGALLERY（gallery/index.html）に使用されるCSSを記載する
+----------------------------------------*/
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 3%;
+}
+
+.filter-btn {
+    width: 30%;
+    max-width: 200px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-align: center;
+    border-radius: 100px;
+    background-color: #DEE4E6;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* アクティブ状態 */
+.filter-btn.active {
+    color: #fefdfc;
+    background-color: #627B86;
+}
+
+/*========= PC用：hover =========*/
+@media (hover: hover) and (pointer: fine) {
+    .filter-btn:hover {
+        color: #fefdfc;
+        background-color: #627B86;
+    }
+
+    /* アクティブ状態時にホバーしたとき（反応を示すため） */
+    .filter-btn.active:hover {
+        background-color: rgba(98, 123, 134, 0.8);
+    }
+}
+/*========= スマホ用：タップ中だけ =========*/
+.filter-btn:active {
+    color: #fefdfc;
+    background-color: #627B86;
+}
+
+/* アクティブ状態時（反応を示すため） */
+.filter-btn.active:active {
+    background-color: rgba(98, 123, 134, 0.8);
+}
+/*========= ここまで =========*/
+
+
+/* ▼ スマホ（大） / 小型タブレット向け (540px以上） */
+@media (min-width: 540px) {
+    .filter-btn {
+        font-size: 1.5rem;
+    }
+}
+
+/* ▼ タブレット / 小型ノートPC向け （768px以上） */
+@media (min-width: 768px) {
+    .filter-btn {
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+}
+
+/* ▼ デスクトップPC向け (992px以上) */
+@media (min-width: 992px) {
+    .filter-btn {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+}
+
+/* ▼ フルサイズ用（1140px以上） */
+@media (min-width: 1140px) {
+    .filter-btn {
+        padding-top: 9px;
+        padding-bottom: 9px;
+    }
+}
+
+/*----------------------------------------
+	ギャラリー
+----------------------------------------*/
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    /* memo: repeat（同じパターンを繰り返す） */
+    /* memo: auto-fit（画面に収まるだけ自動で列を増減させる） */
+    /* memo: minmax（190px以下には縮まない、残りスペースに応じて伸びる） */
+    gap: 30px;
+    margin-top: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.gallery-item {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 8px #eeece7; /* イラストと背景の境目を見やすくするため */
+    cursor: pointer;
+}
+
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1); /* 10%拡大 */
+}
+
+
+/* ▼ スマホ（大） / 小型タブレット向け (540px以上） */
+@media (min-width: 540px) {
+    .gallery {
+        gap: 35px;
+    }
+}
+
+/* ▼ タブレット / 小型ノートPC向け （768px以上） */
+@media (min-width: 768px) {
+    .gallery {
+        gap: 40px;
+        margin-top: 60px;
+    }
+}
+
+/* ▼ デスクトップPC向け (992px以上) */
+@media (min-width: 992px) {
+    .gallery {
+        margin-top: 70px;
+    }
+}
+
+/* ▼ フルサイズ用（1140px以上） */
+@media (min-width: 1140px) {
+    .gallery {
+        margin-top: 80px;
+    }
+}
+
+
+/* レスポンシブ1140pxまで調整しました（2025.11.13。16:54） */
+/* 次、JQueryでモーダルとかの動きを作っていく。 */
+
+/*----------------------------------------
+	モーダルウィンドウ
+----------------------------------------*/
+
+/* ↓ モーダルウィンドウテスト中 ↓ */
+/* モーダルの外枠（最初は非表示） */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.95);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.modal.show {
+    display: flex;
+}
+
+/* 背景クリックで閉じるため（下のレイヤー） */
+.modal-overlay {
+    position: absolute;
+    inset: 0; /* overlayを親要素いっぱいに広げる */
+    z-index: 1;
+}
+
+/* 閉じるボタン */
+.modal-close {
+    position: fixed; /* 画面の右上に固定 */
+    top: 20px;
+    right: 20px;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none; /* 誤って選択（ハイライト）しないように */
+    z-index: 10000; /* モーダルより常に前面に置く */
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s ease;
+}
+
+/* ×アイコン */
+.modal-close::before,
+.modal-close::after {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 2px;
+    background: #fefdfc;
+    border-radius: 2px;
+}
+
+.modal-close::before {
+    transform: rotate(45deg);
+}
+
+.modal-close::after {
+    transform: rotate(-45deg);
+}
+
+/*========= PC用：hover =========*/
+@media (hover: hover) and (pointer: fine) {
+    .modal-close:hover {
+        opacity: 0.6;
+    }
+}
+/*========= スマホ用：タップ中だけ =========*/
+.modal-close:active {
+    opacity: 0.6;
+}
+/*========= ここまで =========*/
+
+
+/* コンテンツ全体（画像＋ボタン）を前面に */
+.modal-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* 作品画像 */
+.modal-image {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100vh; /* JS側で max-height を動的に制御するので、CSSでは一旦大きめに */
+    border-radius: 5px;
+    user-select: none;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: contain;
+    /* ↓ スワイプ時に画像をめくる感じにする */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    will-change: transform;
+}
+
+/* キャプション（作品タイトル） */
+.modal-caption-title {
+    font-size: 1.4rem;
+    color: rgba(254, 253, 252, 0.6);
+    text-align: center;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* キャプション（日付） */
+.modal-caption-date {
+    font-size: 1.25rem;
+    color: rgba(254, 253, 252, 0.5);
+    text-align: right;
+    margin-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* 前へ・次へボタン */
+.modal-prev-next-wrap {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    padding-left: 25px;
+    padding-right: 25px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 10000; /* モーダルより常に前面に置く */
+}
+
+/* 左矢印 （ color:#fefdfc; → stroke='%23fefdfc' です。） */
+.modal-prev {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    background-color: rgba(254, 253, 252, 0.15);
+    border-radius: 50%;
+    background-image: url("data:image/svg+xml;utf8,\ <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fefdfc' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>\ <polyline points='14 6 8 12 14 18'/>\ </svg>");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 23px;
+    z-index: 3;
+    transition: opacity 0.3s ease;
+}
+
+/* 右矢印 */
+.modal-next {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    background-color: rgba(254, 253, 252, 0.15);
+    border-radius: 50%;
+    background-image: url("data:image/svg+xml;utf8,\ <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fefdfc' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>\ <polyline points='10.5 6 16.5 12 10.5 18'/>\ </svg>");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 23px;
+    z-index: 3;
+    transition: opacity 0.3s ease;
+}
+
+/*========= PC用：hover =========*/
+@media (hover: hover) and (pointer: fine) {
+    .modal-prev:hover,
+    .modal-next:hover {
+        opacity: 0.7;
+    }
+}
+/*========= スマホ用：タップ中だけ =========*/
+.modal-prev:active,
+.modal-next:active {
+    opacity: 0.7;
+}
+/*========= ここまで =========*/
+
+
+/* ▼ スマホ（大） / 小型タブレット向け (540px以上） */
+@media (min-width: 540px) {
+    .modal-caption-title {
+        font-size: 1.5rem;
+    }
+
+    .modal-caption-date {
+        font-size: 1.4rem;
+    }
+}
+
+/* ▼ タブレット / 小型ノートPC向け （768px以上） */
+@media (min-width: 768px) {
+    .modal-prev-next-wrap {
+        bottom: 48%;
+        transform: translateY(-50%);
+    }
+}
+
+/* ▼ デスクトップPC向け (992px以上) */
+@media (min-width: 992px) {
+    .modal-close::before,
+    .modal-close::after {
+        width: 25px;
+    }
+
+    .modal-prev,
+    .modal-next {
+        width: 45px;
+        height: 45px;
+    }
+
+    .modal-prev::before,
+    .modal-next::before {
+        width: 13px;
+        height: 13px;
+    }
+}
+
+/* ▼ フルサイズ用（1140px以上） */
+@media (min-width: 1140px) {
+    .modal-close {
+        right: 30px;
+    }
+
+    .modal-caption-title {
+        font-size: 1.55rem;
+    }
+
+    .modal-caption-date {
+        font-size: 1.45rem;
+    }
+
+    .modal-prev-next-wrap {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+}
+
+/* レスポンシブ1140pxまで調整しました（2026.1.17。13:49） */
+/* 一旦、モーダル周りはOKとします。 */
+/* オリジナル・ファンアートとかで絞り込めるようにするのは、ひとまず他のメニューが作れてから取り掛かる。 */

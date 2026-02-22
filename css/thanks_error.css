@@ -1,0 +1,124 @@
+/*----------------------------------------
+    このCSSファイルには404.htmlとCONTACT（contact/thanks.html）に使用されるCSSを記載する
+----------------------------------------*/
+
+/* 404.html */
+.content-title > .upper {
+    font-family: "Sometype Mono", sans-serif;
+    font-size: 6.5rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.content-title > .lower {
+    font-family: "Archivo", sans-serif;
+    font-size: 2.1rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+
+/* thanks.html、error.html */
+.thanks-text,
+.error-text {
+    line-height: 1.6;
+    text-align: center;
+}
+
+.my-address {
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.kome {
+    font-size: 1.35rem;
+    color: #646464;
+}
+
+.top-button-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.top-button {
+    width: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    color: #fefdfc;
+    background-color: #627B86;
+    border-radius: 4px;
+    padding-top: 15px;
+    padding-bottom: 16px;
+    padding-left: 15px;
+    padding-right: 15px;
+    transition: background-color 0.2s ease;
+}
+
+.home-icon {
+    width: 25px;
+}
+
+.top-button > span {
+    font-weight: 500;
+}
+
+/*========= PC用：hover =========*/
+@media (hover: hover) and (pointer: fine) {
+    .top-button:hover {
+        background-color: rgba(98, 123, 134, 0.8);
+    }
+}
+/*========= スマホ用：タップ中だけ =========*/
+.top-button:active {
+    background-color: rgba(98, 123, 134, 0.8);
+}
+/*========= ここまで =========*/
+
+
+/* ▼ タブレット / 小型ノートPC向け （768px以上） */
+@media (min-width: 768px) {
+    .content-title > .upper {
+        font-size: 6.3rem;
+    }
+
+    .content-title > .lower {
+        font-size: 2.5rem;
+    }
+
+    .kome {
+        font-size: 1.4rem;
+    }
+
+    .top-button {
+        padding-top: 17px;
+        padding-bottom: 18px;
+    }
+}
+
+/* ▼ デスクトップPC向け (992px以上) */
+@media (min-width: 992px) {
+    .content-title > .upper {
+        font-size: 6.1rem;
+    }
+
+    .content-title > .lower {
+        font-size: 2.8rem;
+        font-weight: 650;
+    }
+
+    .my-address {
+        font-size: 2rem;
+    }
+
+    .kome {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* レスポンシブ1140pxまで調整しました（2026.2.11。17:57） */
+/* レイアウト面はOKとします。 */

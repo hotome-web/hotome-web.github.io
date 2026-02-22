@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GALLERY | HOTOME</title>
+
+    <meta name="description" content="オリジナルイラストやファンアートをまとめたギャラリーページです。">
+
+    <link rel="canonical" href="https://hotome.com/gallery/">
+
+    <!-- OGP -->
+    <meta property="og:title" content="GALLERY | HOTOME">
+    <meta property="og:description" content="オリジナルイラストやファンアートをまとめたギャラリーページです。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hotome.com/gallery/">
+    <meta property="og:image" content=""><!-- 後で作成する -->
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="../img/favicon.ico">
+
+    <!-- GoogleFont -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/gallery.css">
+
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <!-- header -->
+        <div id="header"></div>
+        <!-- headerここまで -->
+
+        <!-- main -->
+        <main class="main">
+            <div class="main-inner">
+
+                <section class="section">
+                    <h2 class="content-title">GALLERY</h2>
+
+                    <div class="filter-buttons">
+                        <button type="button" class="filter-btn active" data-filter="all">ALL</button>
+                        <button type="button" class="filter-btn" data-filter="original">ORIGINAL</button>
+                        <button type="button" class="filter-btn" data-filter="fanart">FAN ART</button>
+                    </div>
+
+                    <div class="gallery">
+                        <!-- <div class="gallery-item">
+                            <img src="./img/original/dummy8.png" alt="作品タイトル">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="./img/original/dummy7.png" alt="作品タイトル">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="./img/original/dummy6.jpg" alt="作品タイトル">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="./img/original/dummy5.jpg" alt="作品タイトル">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="./img/original/dummy4.jpg" alt="作品タイトル">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="./img/original/dummy3.jpg" alt="作品タイトル">
+                        </div>
+
+                        <div class="gallery-item">
+                            <img src="./img/fanart/dummy12.png" alt="作品タイトル">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="./img/fanart/dummy11.jpg" alt="作品タイトル">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="./img/fanart/dummy10.jpg" alt="作品タイトル">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="./img/fanart/dummy9.jpg" alt="作品タイトル">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="./img/fanart/dummy7.jpg" alt="作品タイトル">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="./img/fanart/dummy6.jpg" alt="作品タイトル">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="./img/fanart/dummy5.jpg" alt="作品タイトル">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="./img/fanart/dummy3.jpg" alt="作品タイトル">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="./img/fanart/dummy2.jpg" alt="作品タイトル">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="./img/fanart/dummy1.jpg" alt="作品タイトル">
+                        </div> -->
+                    </div>
+
+                </section>
+                <!-- sectionここまで -->
+
+                <!-- ↓ モーダルウィンドウ テスト中 ↓ -->
+                <div class="modal" id="modal">
+                    <div class="modal-overlay"></div>
+
+                    <button class="modal-close"></button>
+
+                    <div class="modal-content">
+
+
+                        <div class="modal-artwork">
+                            <img class="modal-image" src="" alt="">
+                            <p class="modal-caption-title">「タイトルが入ります。タイトルが入ります。タイトルが入ります。」</p>
+                            <p class="modal-caption-date">2025.1.13</p>
+                        </div>
+
+                    </div>
+
+                    <div class="modal-prev-next-wrap">
+                        <button class="modal-prev"></button>
+                        <button class="modal-next"></button>
+                    </div>
+
+                </div>
+                <!-- ↑ テスト中 ↑ -->
+
+            </div>
+        </main>
+        <!-- mainここまで -->
+
+        <!-- footer -->
+        <div id="footer"></div>
+        <!-- footerここまで -->
+
+        <button class="page-top" aria-label="ページトップへ">
+            <span class="page-top-arrow"></span>
+        </button>
+
+    </div>
+    <!-- wrapperここまで -->
+
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/gallery.js"></script>
+    <script src="../js/modal.js"></script>
+
+</body>
+</html>

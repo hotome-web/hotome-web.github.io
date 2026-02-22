@@ -1,0 +1,358 @@
+/*----------------------------------------
+	このCSSファイルにはBLOGの個別記事に使用されるCSSを記載する
+----------------------------------------*/
+
+.main {
+    margin-bottom: 40px;
+}
+
+.thumbnail-wrap {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+}
+
+.thumbnail {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* 16:9 に固定 */
+    object-fit: cover;
+}
+
+.article-header {
+    margin-top: 40px;
+}
+
+/* タイトル（h2） */
+.title {
+    position: relative;
+    font-size: 2rem;
+    font-weight: 700;
+    padding-top: 2px;
+    padding-bottom: 3px;
+    padding-left: 17px;
+    padding-right: 10px;
+}
+
+.title::before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 10px;
+    height: 100%;
+    border-radius: 2px;
+    background-color: #627B86;
+    top: 50%;
+    left: 5px;
+    transform: translate(-50%, -50%);
+}
+
+.title::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    border-radius: 1px;
+    background-color: #aaa;
+}
+
+.date {
+    display: block;
+    font-weight: 500;
+    text-align: right;
+    margin-top: 15px;
+}
+
+
+/* ▼ スマホ（大） / 小型タブレット向け (540px以上） */
+@media (min-width: 540px) {
+    .main {
+        margin-bottom: 50px;
+    }
+
+    /* タイトル（h2） */
+    .title {
+        padding-left: 20px;
+    }
+}
+
+/* ▼ タブレット / 小型ノートPC向け （768px以上） */
+@media (min-width: 768px) {
+    .main {
+        margin-bottom: 55px;
+    }
+
+    .main-inner {
+        max-width: 680px;
+    }
+
+    .thumbnail-wrap {
+        max-width: 640px;
+        margin-top: 40px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .thumbnail {
+        border-radius: 5px;
+    }
+
+    .article-header {
+        margin-top: 55px;
+    }
+
+    /* タイトル（h2） */
+    .title {
+        font-size: 2.6rem;
+        padding-bottom: 4px;
+        padding-left: 25px;
+    }
+
+    .title::before {
+        width: 12px;
+        left: 6px;
+    }
+
+    .title::after {
+        bottom: -13px;
+    }
+
+    .date {
+        padding-right: 6px;
+        margin-top: 22px;
+    }
+}
+
+/* ▼ フルサイズ用（1140px以上） */
+@media (min-width: 1140px) {
+    .main {
+        margin-bottom: 60px;
+    }
+}
+
+/*========= text-bodyの中身（基本） =========*/
+.text-body {
+    line-height: 1.6; /* 行間の調整 */
+    margin-top: 30px;
+}
+
+/* 小見出し（h3） */
+.sub-title {
+    position: relative;
+    font-size: 2rem;
+    font-weight: 700;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 60px;
+    margin-bottom: 35px;
+}
+
+.sub-title::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    border-radius: 3px;
+    background-color: #B1BDC2;
+}
+
+.sub-title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 30%;
+    max-width: 120px;
+    height: 5px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    background-color: #627B86;
+}
+
+.text-body > p + p {
+    margin-top: 25px;
+}
+
+.text-body > img {
+    display: block;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-body > p + img,
+.text-body > img + img,
+.text-body > img + p {
+    margin-top: 25px;
+}
+
+
+/* ▼ タブレット / 小型ノートPC向け （768px以上） */
+@media (min-width: 768px) {
+    .text-body {
+        margin-top: 50px;
+    }
+
+    /* 小見出し（h3） */
+    .sub-title {
+        font-size: 2.6rem;
+        margin-top: 70px;
+        margin-bottom: 45px;
+    }
+
+    .sub-title::before {
+        bottom: -12px;
+    }
+
+    .sub-title::after {
+        bottom: -12px;
+    }
+
+    .text-body > p + p {
+        margin-top: 30px;
+    }
+
+    .text-body > p + img,
+    .text-body > img + img,
+    .text-body > img + p {
+        margin-top: 40px;
+    }
+}
+
+
+/*----------------------------------------
+	シェアボタン
+----------------------------------------*/
+.share {
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+    border-top: 1.5px solid #aaa;
+    border-bottom: 1.5px solid #aaa;
+    margin-top: 55px;
+    padding-top: 23px;
+    padding-bottom: 23px;
+}
+
+.share svg {
+    width: 27px;
+    height: 27px;
+    color: #627B86;
+    transition: color 0.2s ease;
+}
+
+/*========= PC用：hover =========*/
+@media (hover: hover) and (pointer: fine) {
+    .share a:hover svg,
+    .share button:hover svg {
+        color: rgba(98, 123, 134, 0.5);
+    }
+}
+/*========= スマホ用：タップ中だけ =========*/
+.share a:active svg,
+.share button:active svg {
+    color: rgba(98, 123, 134, 0.5);
+}
+/*========= ここまで =========*/
+
+
+/* ▼ タブレット / 小型ノートPC向け （768px以上） */
+@media (min-width: 768px) {
+    .share {
+        gap: 55px;
+        margin-top: 70px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+}
+
+/*========= ツールチップ =========*/
+.share a,
+.share button {
+    position: relative;
+}
+
+/* 文字が入る部分 */
+.share a::after,
+.share button::after {
+    content: attr(aria-label); /* aria-labelの中に記述した文字を使う */
+    position: absolute;
+    bottom: calc(100% + 8px); /* 100% → ボタンの高さ、+8px → 少し浮かせる */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+    white-space: nowrap; /* 折り返ししない */
+    background: #303030;
+    color: #fefdfc;
+    border-radius: 4px;
+    padding-top: 3px;
+    padding-bottom: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* 吹き出しの三角部分 */
+.share a::before,
+.share button::before {
+    content: "";
+    position: absolute;
+    bottom: calc(100% + 3px);
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: #303030;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+/* マウスホバーが可能な環境にのみ適用(hover: hover) */
+@media (hover: hover) {
+    .share a:hover::after,
+    .share button:hover::after {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-4px);
+    }
+
+    .share a:hover::before,
+    .share button:hover::before {
+        opacity: 1;
+    }
+}
+
+/* PC/キーボード操作用（ :focus-visible） */
+.share a:focus-visible::after,
+.share button:focus-visible::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-4px);
+}
+
+.share a:focus-visible::before,
+.share button:focus-visible::before {
+    opacity: 1;
+}
+
+/* SP/タップ操作用（時間経過でツールチップを引っ込めたいため）※JS(.is-active)で制御します */
+.share a.is-active::after,
+.share button.is-active::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-4px);
+}
+
+.share a.is-active::before,
+.share button.is-active::before {
+    opacity: 1;
+}
+
+
+
+/* レスポンシブ1140pxまで調整しました（2026.1.29。16:34） */
+/* text-body内の装飾（色とかマーカーとか…）は、また今度設定しよう。 */
+
+/* シェアに関しては、見た目の挙動は整えたけど、テストとかはまだです。 */
+/* サムネイルはblog一覧でも使ってるから、同じデータを引っ張ってこれるようにしたいな。（jsonとかでできるのかな） */

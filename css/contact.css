@@ -1,0 +1,296 @@
+/*----------------------------------------
+    このCSSファイルにはCONTACT（contact/index.html）に使用されるCSSを記載する
+----------------------------------------*/
+
+.contact-text {
+    line-height: 1.6;
+}
+
+.contact-notes {
+    margin-top: 30px;
+    padding-left: 0;
+}
+
+.contact-notes > li {
+    position: relative;
+    padding-left: 1.6rem; /* インデント幅 */
+}
+
+.contact-notes > li::before {
+    content: "●";
+    font-size: 1rem;
+    position: absolute;
+    left: 2px;
+    top: 0.5rem; /* フォントに合わせて微調整 */
+}
+
+.contact-notes > li + li {
+    margin-top: 15px;
+}
+
+.mail {
+    margin-top: 40px;
+    border-bottom: 1.5px solid #bbb;
+    padding-bottom: 15px;
+}
+
+.mail-label {
+    text-align: center;
+    border-width: 2px;
+    border-radius: 4px;
+    border-color: #aaa;
+    padding: 4px;
+}
+
+.my-address {
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.url-link {
+    font-weight: 700;
+    color: #4190b3;
+    border-bottom: 2px dotted #4190b3;
+    padding-bottom: 1px;
+    transition: color 0.15s ease, border-bottom-color 0.15s ease;
+}
+
+.kome {
+    font-size: 1.35rem;
+    color: #646464;
+}
+
+/*========= PC用：hover =========*/
+@media (hover: hover) and (pointer: fine) {
+    .url-link:hover {
+        color: rgba(65, 145, 179, 0.7);
+        border-bottom: 2px dotted rgba(65, 145, 179, 0.7);
+    }
+}
+/*========= スマホ用：タップ中だけ =========*/
+.url-link:active {
+    color: rgba(65, 145, 179, 0.7);
+    border-bottom: 2px dotted rgba(65, 145, 179, 0.7);
+}
+/*========= ここまで =========*/
+
+
+/* ▼ タブレット / 小型ノートPC向け （768px以上） */
+@media (min-width: 768px) {
+    .contact-notes>li::before {
+        top: 0.55rem; /* フォントに合わせて微調整 */
+    }
+
+    .contact-notes > li + li {
+        margin-top: 20px;
+    }
+
+    .kome {
+        font-size: 1.4rem;
+    }
+}
+
+/* ▼ デスクトップPC向け (992px以上) */
+@media (min-width: 992px) {
+    .contact-notes {
+        margin-top: 35px;
+    }
+
+    .mail {
+        padding-bottom: 20px;
+    }
+
+    .mail-label {
+        padding: 4.5px;
+    }
+
+    .my-address {
+        font-size: 2rem;
+        margin-top: 13px;
+    }
+
+    .kome {
+        font-size: 1.5rem;
+    }
+}
+
+/*----------------------------------------
+	コンタクトフォーム
+----------------------------------------*/
+
+.contact-form {
+    margin-top: 40px;
+}
+
+.form-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.form-label {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.4rem;
+    row-gap: 6px;
+    column-gap: 7px;
+}
+
+.required-badge {
+    font-size: 1.1rem;
+    color: #ce4e4e;
+    border: 1px solid #ce4e4e;
+    border-radius: 3px;
+    padding-top: 1px;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.label-text {
+    font-weight: 500;
+}
+
+.sub-text {
+    font-size: 1.1rem;
+    color: #646464;
+}
+
+.form-label > select,
+.form-label > input,
+.form-label > textarea {
+    width: 100%;
+    font-size: 1.4rem;
+    background-color: #fff;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding-top: 9px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-label > input:focus,
+.form-label > select:focus,
+.form-label > textarea:focus {
+    outline: none;
+    border-color: #627B86;
+    box-shadow: 0 0 0 2px rgba(98, 123, 134, 0.2);
+}
+
+.form-label > textarea {
+    min-height: 120px;
+    resize: vertical; /* textareaを縦方向にのみ自由に動かせる */
+}
+
+/* 選択フォームの下向き矢印 */
+.select-category {
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,\ <svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23627B86' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>\ <polyline points='6 9 12 15 18 9'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 12px;
+}
+
+/* 送信ボタン */
+.form-inner button {
+    width: 170px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-align: center;
+    color: #fefdfc;
+    background-color: #627B86;
+    border-radius: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 15px;
+    padding-bottom: 16px;
+    padding-left: 15px;
+    padding-right: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/*========= PC用：hover =========*/
+@media (hover: hover) and (pointer: fine) {
+    .form-inner button:hover {
+        background-color: rgba(98, 123, 134, 0.8);
+    }
+}
+/*========= スマホ用：タップ中だけ =========*/
+.form-inner button:active {
+    background-color: rgba(98, 123, 134, 0.8);
+}
+/*========= ここまで =========*/
+
+
+/* ▼ タブレット / 小型ノートPC向け （768px以上） */
+@media (min-width: 768px) {
+    .contact-form {
+        margin-top: 50px;
+    }
+
+    .form-inner {
+        gap: 40px;
+    }
+
+    .form-label {
+        font-size: 1.5rem;
+        row-gap: 7px;
+    }
+
+    .required-badge {
+        font-size: 1.15rem;
+    }
+
+    .sub-text {
+        font-size: 1.15rem;
+    }
+
+    .form-label > select,
+    .form-label > input,
+    .form-label > textarea {
+        font-size: 1.5rem;
+    }
+
+    .select-category {
+        background-size: 16px;
+    }
+
+    .form-inner button {
+        font-size: 1.5rem;
+        padding-top: 17px;
+        padding-bottom: 18px;
+    }
+}
+
+/* ▼ デスクトップPC向け (992px以上) */
+@media (min-width: 992px) {
+    .form-inner {
+        gap: 45px;
+    }
+
+    .form-label {
+        row-gap: 8px;
+    }
+
+    .sub-text {
+        font-size: 1.3rem;
+    }
+
+    .form-label > select,
+    .form-label > input,
+    .form-label > textarea {
+        padding-top: 11px;
+        padding-bottom: 13px;
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+}
+
+/* レスポンシブ1140pxまで調整しました（2026.2.11。17:57） */
+/* レイアウト面はOKとします。 */

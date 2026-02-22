@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CONTACT | HOTOME</title>
+
+    <meta name="description" content="ご依頼やご感想などのお問い合わせは、こちらのフォームよりお願いいたします。">
+
+    <link rel="canonical" href="https://hotome.com/contact/">
+
+    <!-- OGP -->
+    <meta property="og:title" content="CONTACT | HOTOME">
+    <meta property="og:description" content="ご依頼やご感想などのお問い合わせは、こちらのフォームよりお願いいたします。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hotome.com/contact/">
+    <meta property="og:image" content=""><!-- 後で作成する -->
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="../img/favicon.ico">
+
+    <!-- GoogleFont -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/contact.css">
+
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <!-- header -->
+            <div id="header"></div>
+        <!-- headerここまで -->
+
+        <!-- main -->
+        <main class="main">
+            <div class="main-inner">
+
+                <section class="section">
+                    <h2 class="content-title">CONTACT</h2>
+
+                    <div class="contact-inner">
+
+                        <div class="contact-text">
+                            <p>何かございましたら、メールアドレスまたはコンタクトフォームよりお願いいたします。</p>
+                            <ul class="contact-notes">
+                                <li>お仕事は募集しておりませんが、依頼をしてみたいなどございましたら、お気軽にご相談ください。<br>
+                                <span class="kome">※ 簡易にはなりますが、<a href="" class="url-link">skeb</a>もございます。</span></li>
+                                <li>作品やサイトへの感想も大変励みになります！</li>
+                            </ul>
+                            <div class="mail">
+                                <div class="mail-label">メールアドレス</div>
+                                <p class="my-address">hottomeme □ gmail.com</p>
+                                <p><span class="kome">※ □ を @ に変えてお送りください。</span></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-form">
+                            <form id="contactForm" class="form-inner">
+
+                                <input type="hidden" name="_subject" value="【HOTOME】お問い合わせが届きました">
+                                <input type="hidden" name="_captcha" value="false">
+
+                                <label class="form-label is-required">
+                                    <span class="required-badge">必須</span>
+                                    <span class="label-text">お問い合わせ内容を選択してください。</span>
+                                    <select class="select-category" name="category" required>
+                                        <option value="" disabled selected>選択してください</option>
+                                        <option value="感想">感想を送る</option>
+                                        <option value="相談">相談したい</option>
+                                        <option value="その他">その他</option>
+                                    </select>
+                                </label>
+
+                                <label class="form-label is-required">
+                                    <span class="required-badge">必須</span>
+                                    <span class="label-text">お名前<span class="sub-text">（ハンドルネーム可）</span></span>
+                                    <input type="text" name="name" placeholder="例：Hotome" required>
+                                </label>
+
+                                <label class="form-label is-required">
+                                    <span class="required-badge">必須</span>
+                                    <span class="label-text">メールアドレス</span>
+                                    <input type="email" name="email" placeholder="例：hotome@example.com" required>
+                                </label>
+
+                                <label class="form-label is-required">
+                                    <span class="required-badge">必須</span>
+                                    <span class="label-text">お問い合わせ内容</span>
+                                    <textarea name="message" placeholder="感想・ご相談など自由にどうぞ" required></textarea>
+                                </label>
+
+                                <button type="submit">送信する</button>
+                            </form>
+                        </div>
+
+                    </div>
+                    <!-- contact-innerここまで -->
+                </section>
+                <!-- sectionここまで -->
+
+            </div>
+        </main>
+        <!-- mainここまで -->
+
+        <!-- footer -->
+        <div id="footer"></div>
+        <!-- footerここまで -->
+
+        <button class="page-top" aria-label="ページトップへ">
+            <span class="page-top-arrow"></span>
+        </button>
+
+    </div>
+    <!-- wrapperここまで -->
+
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/contact.js"></script>
+
+</body>
+</html>
