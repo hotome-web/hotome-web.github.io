@@ -13,7 +13,7 @@
 /* h3のデザイン */
 .name {
     font-size: 2.5rem;
-    font-weight: 550;
+    font-weight: 600;
     text-align: center;
     margin-top: 20px;
 }
@@ -55,7 +55,6 @@
     }
 }
 
-
 /*========= SNSリスト =========*/
 
 .sns-list {
@@ -88,17 +87,17 @@
     transition: color 0.2s ease;
 }
 
-/*========= PC用：hover =========*/
+/* ★ PC用：hover ========= */
 @media (hover: hover) and (pointer: fine) {
     .sns-list a:hover svg {
         color: rgba(98, 123, 134, 0.5);
     }
 }
-/*========= スマホ用：タップ中だけ =========*/
+/* ★ スマホ用：タップ中だけ */
 .sns-list a:active svg {
     color: rgba(98, 123, 134, 0.5);
 }
-/*========= ここまで =========*/
+/* ★ ここまで =========== */
 
 
 /* ▼ スマホ（大） / 小型タブレット向け (540px以上） */
@@ -126,7 +125,6 @@
     }
 }
 
-
 /*========= 自己紹介 =========*/
 
 .profile-text {
@@ -144,9 +142,8 @@
 
 .tools-label {
     text-align: center;
-    border-width: 2px;
     border-radius: 4px;
-    border-color: #AAAAAA;
+    border: 2px solid #AAAAAA;
     padding: 4px;
 }
 
@@ -156,6 +153,7 @@
 
 .tools-list ul {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .category {
@@ -186,5 +184,4 @@
 }
 
 
-/* いったんレスポンシブ768pxまで調整しました（2025.11.11。17:00） */
-/* レスポンシブ1140pxまで調整しました。大半がそのままで問題なさそだったのでほぼ変化なし（2025.11.12.。16:02） */
+/* 記述確認・挙動確認OKです！（2026.2.23-15:48） */
