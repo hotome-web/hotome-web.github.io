@@ -31,17 +31,17 @@
     pointer-events: none; /* active中のものには触れないように */
 }
 
-/*========= PC用：hover =========*/
+/* ★ PC用：hover ========= */
 @media (hover: hover) and (pointer: fine) {
     .filter-year-group > .filter-btn:hover {
         background-color: rgba(48, 48, 48, 0.08);
     }
 }
-/*========= スマホ用：タップ中だけ =========*/
+/* ★ スマホ用：タップ中だけ */
 .filter-year-group > .filter-btn:active {
     background-color: rgba(48, 48, 48, 0.08);
 }
-/*========= ここまで =========*/
+/* ★ ここまで =========== */
 
 
 /* ▼ タブレット / 小型ノートPC向け （768px以上） */
@@ -108,7 +108,7 @@
 }
 
 .filter-buttons.is-open .filter-year-group {
-    max-height: 300px; /* 中身が収まる十分な高さにする。中身が増えたら調整してください。 */
+    max-height: 500px; /* 中身が収まる十分な高さにする。中身が増えたら調整してください。 */
     opacity: 1;
     transition: max-height 0.45s ease, opacity 0.15s ease; /* 開くとき */
 }
@@ -133,7 +133,7 @@
     border-bottom: 1.5px solid #bbb;
 }
 
-/*========= PC用：hover =========*/
+/* ★ PC用：hover ========= */
 @media (hover: hover) and (pointer: fine) {
     .blog-card > a:hover .card-inner {
         border-radius: 8px;
@@ -144,7 +144,7 @@
         opacity: 0.75;
     }
 }
-/*========= スマホ用：タップ中だけ =========*/
+/* ★ スマホ用：タップ中だけ */
 .blog-card > a:active .card-inner {
     border-radius: 8px;
     background-color: rgba(222, 228, 230, 0.3);
@@ -153,7 +153,7 @@
 .blog-card > a:active .thumbnail {
     opacity: 0.75;
 }
-/*========= ここまで =========*/
+/* ★ ここまで =========== */
 
 .card-inner {
     display: flex;
@@ -315,18 +315,17 @@
     pointer-events: none;
 }
 
-/*========= PC用：hover =========*/
+/* ★ PC用：hover ========= */
 @media (hover: hover) and (pointer: fine) {
     .pagination-btn:hover {
         background-color: #c5cfd3;
     }
 }
-/*========= スマホ用：タップ中だけ =========*/
+/* ★ スマホ用：タップ中だけ */
 .pagination-btn:active {
     background-color: #c5cfd3;
 }
-/*========= ここまで =========*/
-
+/* ★ ここまで =========== */
 
 /* 前へのアイコン */
 .prev {
@@ -364,7 +363,6 @@
 }
 
 
-
 /* ▼ タブレット / 小型ノートPC向け （768px以上） */
 @media (min-width: 768px) {
     .pagination {
@@ -380,11 +378,6 @@
 }
 
 
-/* レスポンシブ1140pxまで調整しました（2026.1.23。10:23） */
-/* レイアウト面はOKとします。 */
+/* 記述確認・挙動確認OKです！（2026.2.23-17:15） */
 
-/* 記事の絞り込み等のJSはまだ着手していないので、他のページのレイアウト作業が終わり次第進める。 */
-/* メモ：スマホ版は1ページ6記事まで、PC版は1ページ12記事までが良い感じかも。 */
-
-/* ページネーションで移動した先の記事を見た後に、ブラウザの戻るボタンで戻った時に、blogのhtml.indexではなくて、直前のページネーションのページ？に戻ることができたりするのか。これができると操作面のストレスが軽減されそう。 */
-/* 「すべての記事」のボタン、もし年数が増えた場合、縦にどんどん長くなるので、その場合ボタン内でスクロールできるといい感じ。任天堂のページ（https: //www.nintendo.com/jp/topics/list）参考になる！ */
+/* メモ：「すべての記事」のボタン、もし年数が増えた場合、縦にどんどん長くなるので、その場合ボタン内でスクロールできるといい感じ。任天堂のページ（https: //www.nintendo.com/jp/topics/list）参考になる！ */
