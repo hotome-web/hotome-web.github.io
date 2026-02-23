@@ -1,164 +1,99 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>BLOG | HOTOME</title>
+        <title>BLOG | HOTOME</title>
 
-    <meta name="description" content="イラスト制作や日々のことを綴ったブログ記事の一覧ページです。">
+        <meta name="description" content="イラスト制作や日々のことを綴ったブログ記事の一覧ページです。">
 
-    <link rel="canonical" href="https://hotome.com/blog/">
+        <link rel="canonical" href="https://hotome.com/blog/">
 
-    <!-- OGP -->
-    <meta property="og:title" content="BLOG | HOTOME">
-    <meta property="og:description" content="イラスト制作や日々のことを綴ったブログ記事の一覧ページです。">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://hotome.com/blog/">
-    <meta property="og:image" content=""><!-- 後で作成する -->
+        <!-- Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-FB651NEBJ9"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-FB651NEBJ9');
+        </script>
 
-    <meta name="twitter:card" content="summary_large_image">
+        <!-- OGP -->
+        <meta property="og:title" content="BLOG | HOTOME">
+        <meta property="og:description" content="イラスト制作や日々のことを綴ったブログ記事の一覧ページです。">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://hotome.com/blog/">
+        <meta property="og:image" content=""><!-- 後で作成する -->
+        <meta name="twitter:card" content="summary_large_image">
 
-    <link rel="icon" href="../img/favicon.ico">
+        <link rel="icon" href="/hotome/img/favicon.ico">
 
-    <!-- GoogleFont -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+        <!-- GoogleFont -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
 
-    <!-- stylesheet -->
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/blog.css">
+        <!-- stylesheet -->
+        <link rel="stylesheet" href="/hotome/css/reset.css">
+        <link rel="stylesheet" href="/hotome/css/common.css">
+        <link rel="stylesheet" href="/hotome/css/blog.css">
+    </head>
 
-</head>
+    <body>
+        <div class="wrapper">
 
-<body>
-    <div class="wrapper">
+            <!-- header -->
+            <div id="header"></div>
 
-        <!-- header -->
-        <div id="header"></div>
-        <!-- headerここまで -->
+            <!-- main -->
+            <main class="main">
+                <div class="main-inner">
 
-        <!-- main -->
-        <main class="main">
-            <div class="main-inner">
+                    <section class="section">
+                        <h2 class="content-title">BLOG</h2>
 
-                <section class="section">
-                    <h2 class="content-title">BLOG</h2>
+                        <div class="filter-buttons">
+                            <button class="filter-btn filter-toggle" data-filter="all">
+                                <span class="filter-label">すべての記事</span>
+                                <span class="arrow"></span>
+                            </button>
 
-                    <div class="filter-buttons">
-                        <button class="filter-btn filter-toggle" data-filter="all">
-                            <span class="filter-label">すべての記事</span>
-                            <span class="arrow"></span>
-                        </button>
-
-
-                        <div class="filter-year-group">
-                            <!-- <button class="filter-btn" data-filter="all">すべての記事</button>
-                            <button class="filter-btn" data-filter="2026">2026年</button>
-                            <button class="filter-btn" data-filter="2025">2025年</button>
-                            <button class="filter-btn" data-filter="2024">2024年</button> -->
+                            <!-- フィルターボタン -->
+                            <div class="filter-year-group"></div>
                         </div>
-                    </div>
 
+                        <!-- jsonから呼び出し -->
+                        <div class="blog"></div>
 
-                    <div class="blog">
+                        <p class="no-article">記事がありません。</p>
 
-                            <!-- <div class="blog-card">
-                                <a href="./2026/2026_04_01.html">
-                                    <div class="card-inner">
-                                            <img src="./2026/thumbnail/2026.1.1.png" class="thumbnail" alt="サムネイル">
-                                        <div class="article-header">
-                                                <time class="date" datetime="2026-01-01">2026.01.01</time>
-                                                <h3 class="title">Webサイトを作成しました！</h3>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div> -->
-
-                            <!-- <div class="blog-card">
-                                <a href="">
-                                    <div class="card-inner">
-                                        <img src="./2026/thumbnail/2026.1.5.jpg" class="thumbnail" alt="サムネイル">
-                                        <div class="article-header">
-                                            <time class="date" datetime="2026-01-02">2026.01.02</time>
-                                            <h3 class="title">テスト中。ここにはタイトルがはいります。とても長いタイトルが入るかもしれません。</h3>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div> -->
-
-                            <!-- <div class="blog-card">
-                                <a href="">
-                                    <div class="card-inner">
-                                        <img src="./2026/thumbnail/2026.1.4.jpg" class="thumbnail" alt="サムネイル">
-                                        <div class="article-header">
-                                            <time class="date" datetime="2026-01-03">2026.01.03</time>
-                                            <h3 class="title">test中。英語のタイトルが入るかもしれません。Learning English is hard.</h3>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div> -->
-                            <!-- <div class="blog-card">
-                                <a href="">
-                                    <div class="card-inner">
-                                        <img src="./2026/thumbnail/2026.1.4.jpg" class="thumbnail" alt="サムネイル">
-                                        <div class="article-header">
-                                            <time class="date" datetime="2026-01-03">2026.01.03</time>
-                                            <h3 class="title">test中。英語のタイトルが入るかもしれません。Learning English is hard.</h3>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div> -->
-                            <!-- <div class="blog-card">
-                                <a href="">
-                                    <div class="card-inner">
-                                        <img src="./2026/thumbnail/2026.1.4.jpg" class="thumbnail" alt="サムネイル">
-                                        <div class="article-header">
-                                            <time class="date" datetime="2026-01-03">2026.01.03</time>
-                                            <h3 class="title">test中。英語のタイトルが入るかもしれません。Learning English is hard.</h3>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div> -->
-
-                    </div>
-                    <!-- blogここまで -->
-
-                    <p class="no-article">記事がありません。</p>
-
-
-                    <div class="pagination-info"></div>
-                        <div class="pagination">
-                            <div class="pagination-buttons">
-                                <!-- <button class="pagination-btn active">1</button>
-                                <button class="pagination-btn">2</button>
-                                <button class="pagination-btn">3</button> -->
+                        <!-- ページネーション -->
+                        <div class="pagination-info"></div>
+                            <div class="pagination">
+                                <div class="pagination-buttons"></div>
                             </div>
-                        </div>
 
-                </section>
-                <!-- sectionここまで -->
+                    </section>
+                    <!-- sectionここまで -->
 
-            </div>
-        </main>
-        <!-- mainここまで -->
+                </div>
+            </main>
+            <!-- mainここまで -->
 
-        <!-- footer -->
-        <div id="footer"></div>
-        <!-- footerここまで -->
+            <!-- footer -->
+            <div id="footer"></div>
 
-        <button class="page-top" aria-label="ページトップへ">
-            <span class="page-top-arrow"></span>
-        </button>
+            <!-- page-top -->
+            <button class="page-top" aria-label="ページトップへ">
+                <span class="page-top-arrow"></span>
+            </button>
 
-    </div>
-    <!-- wrapperここまで -->
+        </div>
+        <!-- wrapperここまで -->
 
-    <script src="../js/jquery-3.7.1.min.js"></script>
-    <script src="../js/common.js"></script>
-    <script src="../js/blog.js"></script>
-
-</body>
+        <script src="/hotome/js/jquery-3.7.1.min.js"></script>
+        <script src="/hotome/js/common.js"></script>
+        <script src="/hotome/js/blog.js"></script>
+    </body>
 </html>
