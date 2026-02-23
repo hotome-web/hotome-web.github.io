@@ -176,11 +176,13 @@
     margin-top: 25px;
 }
 
-.text-body > img {
+.text-body img {
     display: block;
     border-radius: 5px;
     margin-left: auto;
     margin-right: auto;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
 }
 
 .text-body > p + img,
@@ -188,6 +190,18 @@
 .text-body > img + p {
     margin-top: 25px;
 }
+
+/* ★ PC用：hover ========= */
+@media (hover: hover) and (pointer: fine) {
+    .text-body img:hover {
+        opacity: 0.85;
+    }
+}
+/* ★ スマホ用：タップ中だけ */
+.text-body img:active {
+    opacity: 0.85;
+}
+/* ★ ここまで =========== */
 
 
 /* ▼ タブレット / 小型ノートPC向け （768px以上） */
@@ -222,10 +236,10 @@
     }
 }
 
-
 /*----------------------------------------
 	シェアボタン
 ----------------------------------------*/
+
 .share {
     display: flex;
     justify-content: center;
@@ -244,19 +258,19 @@
     transition: color 0.2s ease;
 }
 
-/*========= PC用：hover =========*/
+/* ★ PC用：hover ========= */
 @media (hover: hover) and (pointer: fine) {
     .share a:hover svg,
     .share button:hover svg {
         color: rgba(98, 123, 134, 0.5);
     }
 }
-/*========= スマホ用：タップ中だけ =========*/
+/* ★ スマホ用：タップ中だけ */
 .share a:active svg,
 .share button:active svg {
     color: rgba(98, 123, 134, 0.5);
 }
-/*========= ここまで =========*/
+/* ★ ここまで =========== */
 
 
 /* ▼ タブレット / 小型ノートPC向け （768px以上） */
@@ -349,10 +363,110 @@
     opacity: 1;
 }
 
+/*----------------------------------------
+    記事画像用モーダル
+----------------------------------------*/
+
+.img-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.img-modal.is-active {
+    display: flex;
+}
+
+.img-modal-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+}
+
+.img-modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 85%;
+    object-fit: contain;
+    border-radius: 5px;
+    z-index: 1;
+    cursor: zoom-out;
+}
+
+/* 閉じるボタン */
+.modal-close {
+    position: fixed; /* 画面の右上に固定 */
+    top: 20px;
+    right: 20px;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none; /* 誤って選択（ハイライト）しないように */
+    z-index: 2; /* オーバーレイより常に前面に置く */
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s ease;
+}
+
+/* ×アイコン */
+.modal-close::before,
+.modal-close::after {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 2px;
+    background: #fefdfc;
+    border-radius: 2px;
+}
+
+.modal-close::before {
+    transform: rotate(45deg);
+}
+
+.modal-close::after {
+    transform: rotate(-45deg);
+}
+
+/* ★ PC用：hover ========= */
+@media (hover: hover) and (pointer: fine) {
+    .modal-close:hover {
+        opacity: 0.6;
+    }
+}
+/* ★ スマホ用：タップ中だけ */
+.modal-close:active {
+    opacity: 0.6;
+}
+/* ★ ここまで =========== */
 
 
-/* レスポンシブ1140pxまで調整しました（2026.1.29。16:34） */
-/* text-body内の装飾（色とかマーカーとか…）は、また今度設定しよう。 */
+/* ▼ デスクトップPC向け (992px以上) */
+@media (min-width: 992px) {
+    .modal-close::before,
+    .modal-close::after {
+        width: 25px;
+    }
+}
 
-/* シェアに関しては、見た目の挙動は整えたけど、テストとかはまだです。 */
-/* サムネイルはblog一覧でも使ってるから、同じデータを引っ張ってこれるようにしたいな。（jsonとかでできるのかな） */
+/* ▼ フルサイズ用（1140px以上） */
+@media (min-width: 1140px) {
+    .modal-close {
+        right: 30px;
+    }
+}
+
+
+/* 記述確認・挙動確認OKです！（2026.2.23-22:08） */
+
+
+/*----------------------------------------
+	本文（text-body内）の装飾
+    ↓ 随時、追加していってください！ ↓
+----------------------------------------*/
