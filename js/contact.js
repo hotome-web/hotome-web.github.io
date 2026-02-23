@@ -1,25 +1,54 @@
 "use strict";
 
-$("#contactForm").on("submit", function(e) {
-  e.preventDefault();
+$(function() {
 
-  const $button = $(this).find("button");
-  $button.prop("disabled", true).text("送信中…");
+    // ==============================
+    // ▼ フォーム送信処理
+    // ==============================
 
-  const formData = $(this).serialize();
+    $("#contactForm").on("submit", function(e) {
 
-  $.ajax({
-    url: "https://formspree.io/f/xeelezov",
-    method: "POST",
-    data: formData,
-    dataType: "json",
-    success: function() {
-      window.location.href = "/contact/thanks.html";
-    },
-    error: function() {
-    $button.prop("disabled", false).text("送信する");
-    window.location.href = "/contact/error.html";
-    }
+        // ★ 通常のform送信を止める（JSで制御するため）
+        e.preventDefault();
 
-  });
+        const $form = $(this);
+        const $button = $form.find("button");
+
+        // ★ 二重送信防止
+        $button.prop("disabled", true).text("送信中…");
+
+        // ★ フォーム内容をシリアライズ（name属性ベースで送信）
+        const formData = $form.serialize();
+
+        // ==============================
+        // ▼ Ajax送信（Formspree）
+        // ==============================
+
+        $.ajax({
+            url: $form.attr("action"), // ← HTML側のactionを使う（ハードコードしない）
+            method: "POST",
+            data: formData,
+            dataType: "json",
+
+            success: function() {
+
+                // ★ 送信成功時
+                window.location.href = "/contact/thanks.html";
+
+            },
+
+            error: function() {
+
+                // ★ 送信失敗時はボタンを戻す
+                $button.prop("disabled", false).text("送信する");
+
+                window.location.href = "/contact/error.html";
+            }
+        });
+
+    });
+
 });
+
+
+/* 記述確認・挙動確認OKです！（2026.2.23-22:49） */
