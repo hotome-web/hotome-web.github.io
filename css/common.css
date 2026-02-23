@@ -23,6 +23,7 @@ body {
 
 /* 画像が荒くならないように対策 */
 img {
+    display: block;
     max-width: 100%;
     height: auto;
 }
@@ -169,17 +170,17 @@ footer * {
     transition: color 0.3s ease;
 }
 
-/*========= PC用：hover =========*/
+/* ★ PC用：hover ========= */
 @media (hover: hover) and (pointer: fine) {
     .logo:hover svg {
         color: rgba(254, 253, 252, 0.6);
     }
 }
-/*========= スマホ用：タップ中だけ =========*/
+/* ★ スマホ用：タップ中だけ */
 .logo:active svg {
     color: rgba(254, 253, 252, 0.6);
 }
-/*========= ここまで =========*/
+/* ★ ここまで =========== */
 
 
 /* ▼ スマホ（大） / 小型タブレット向け (540px以上） */
@@ -232,7 +233,7 @@ footer * {
     width: 100%;
     height: 100vh; /* ナビの高さ */
     background: #627B86;
-    transition: all 0.6s; /* スライドイン・アウト */
+    transition: right 0.6s; /* スライドイン・アウト */
 }
 
 /* アクティブクラスがついたら位置を0に */
@@ -265,17 +266,17 @@ footer * {
     color: #fde5b2;
 }
 
-/*========= PC用：hover =========*/
+/* ★ PC用：hover ========= */
 @media (hover: hover) and (pointer: fine) {
     .g-nav a:hover {
         color: #fde5b2;
     }
 }
-/*========= スマホ用：タップ中だけ =========*/
+/* ★ スマホ用：タップ中だけ */
 .g-nav a:active {
     color: #fde5b2;
 }
-/*========= ここまで =========*/
+/* ★ ここまで =========== */
 
 
 /* ▼ デスクトップPC向け (992px以上) */
@@ -312,7 +313,7 @@ footer * {
     justify-content: center;
 }
 
-/*×に変化*/
+/* ×に変化 */
 .hamburger-menu span.line {
     position: absolute;
     background-color: #fefdfc;
@@ -413,7 +414,7 @@ small {
     transform: translate(-20%, -100%) rotate(45deg);
 }
 
-/*========= PC用：hover =========*/
+/* ★ PC用：hover ========= */
 @media (hover: hover) and (pointer: fine) {
     .page-top:hover {
         background-color: #3F474B;
@@ -424,7 +425,7 @@ small {
         background-color: #fefdfc;
     }
 }
-/*========= スマホ用：タップ中だけ =========*/
+/* ★ スマホ用：タップ中だけ */
 .page-top:active {
     background-color: #3F474B;
 }
@@ -433,7 +434,7 @@ small {
 .page-top:active .page-top-arrow::after {
     background-color: #fefdfc;
 }
-/*========= ここまで =========*/
+/* ★ ここまで =========== */
 
 /* 上に上がる動き */
 .page-top.UpMove {
@@ -485,3 +486,6 @@ small {
         right: 3.5%;
     }
 }
+
+
+/* 記述確認・挙動確認OKです！（2026.2.23-15:23） */
