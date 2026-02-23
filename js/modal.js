@@ -7,7 +7,7 @@ $(function() {
 
     /* ---------------------------------
         日付フォーマット変換用
-        2025-01-15 → 2025.01.15
+        2026-01-13 → 2026.01.13
     --------------------------------- */
     function formatDate(dateString) {
 
@@ -57,6 +57,15 @@ $(function() {
         );
     }
 
+    // ★ next / prev 用（履歴を増やさない）
+    function replaceModalState(id) {
+        history.replaceState(
+            { modal: true, id: id },
+            "",
+            `?id=${id}`
+        );
+    }
+
     function removeModalState() {
         history.pushState(
             {},
@@ -88,7 +97,9 @@ $(function() {
 
         currentIndex = (currentIndex + 1) % currentList.length;
         showImage();
-        pushModalState(currentList[currentIndex].id);
+
+        // ★ 履歴を増やさずURLだけ更新
+        replaceModalState(currentList[currentIndex].id);
     }
 
     function goPrev() {
@@ -96,7 +107,9 @@ $(function() {
 
         currentIndex = (currentIndex - 1 + currentList.length) % currentList.length;
         showImage();
-        pushModalState(currentList[currentIndex].id);
+
+        // ★ 履歴を増やさずURLだけ更新
+        replaceModalState(currentList[currentIndex].id);
     }
 
     $('.modal-next').on('click', function(e) {
@@ -160,7 +173,7 @@ $(function() {
         const params = new URLSearchParams(window.location.search);
         const id = params.get('id');
 
-        if (id) {
+        if (id && window.galleryData && window.galleryData.length) {
             openModalById(id);
         }
     });
@@ -190,6 +203,9 @@ $(function() {
             adjustImageSize();
         });
 
+        // ★ 前後画像プリロード（SPラグ対策）
+        preloadAdjacentImages();
+
         function adjustImageSize() {
 
             const windowHeight = $(window).height();
@@ -218,6 +234,23 @@ $(function() {
                 'height': 'auto'
             });
         }
+    }
+
+    /* ---------------------------------
+        前後画像プリロード
+    --------------------------------- */
+    function preloadAdjacentImages() {
+
+        if (currentList.length <= 1) return;
+
+        const nextIndex = (currentIndex + 1) % currentList.length;
+        const prevIndex = (currentIndex - 1 + currentList.length) % currentList.length;
+
+        const nextImg = new Image();
+        nextImg.src = currentList[nextIndex].src;
+
+        const prevImg = new Image();
+        prevImg.src = currentList[prevIndex].src;
     }
 
     /* ---------------------------------
@@ -295,19 +328,4 @@ $(function() {
 });
 
 
-
-
-/* 一旦、モーダル周りはOKとします。（2026.1.17。13:49） */
-/* オリジナル・ファンアートとかで絞り込めるようにするのは、ひとまず他のメニューが作れてから取り掛かる。 */
-
-
-/* =================================
-    Modal仕様メモ（2026-02-17確定）
-
-    ・スワイプ対応あり
-    ・キーボード操作あり（← → / Esc）
-    ・URL履歴と連動
-    ・戻るボタン対応あり
-
-    ※UX向上目的のため削除しない
-================================= */
+/* 記述確認・挙動確認OKです！（2026.2.23-16:38） */
