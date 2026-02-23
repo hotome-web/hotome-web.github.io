@@ -103,6 +103,10 @@
                                         <textarea name="message" placeholder="感想・ご相談など自由にどうぞ" required></textarea>
                                     </label>
 
+                                    <!-- ↓ スパム対策用 ↓ -->
+                                    <input type="text" name="website" class="honeypot" autocomplete="off">
+                                    <!-- ↑ ----------- ↑ -->
+
                                     <button type="submit">送信する</button>
                                 </form>
                             </div>
