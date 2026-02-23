@@ -11,6 +11,11 @@ $(function() {
         // ★ 通常のform送信を止める（JSで制御するため）
         e.preventDefault();
 
+        // ★ honeypotチェック（スパム対策）
+        if ($(this).find('input[name="website"]').val() !== "") {
+            return; // 値が入っていたら何もせず終了
+        }
+
         const $form = $(this);
         const $button = $form.find("button");
 
