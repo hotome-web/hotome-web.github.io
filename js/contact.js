@@ -52,3 +52,5 @@ $(function() {
 
 
 /* 記述確認・挙動確認OKです！（2026.2.23-22:49） */
+
+/* 本番では"/contact/thanks.html"、"/contact/error.html" にする必要があると思うので注意！*/
