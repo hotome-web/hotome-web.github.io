@@ -6,7 +6,7 @@
     "year": 2023,
     "date": "2023-04-29",
     "src": "./img/original/2023/2023-04-29.webp",
-    "thumbnail": "./img/original/2023/thumb/2023-04-29.jpg"
+    "thumbnail": "./img/original/2023/thumb/2023-04-29.webp"
     },
     {
     "id": 2,
@@ -15,7 +15,7 @@
     "year": 2023,
     "date": "2023-05-12",
     "src": "./img/fanart/2023/2023-05-12.webp",
-    "thumbnail": "./img/fanart/2023/thumb/2023-05-12.jpg"
+    "thumbnail": "./img/fanart/2023/thumb/2023-05-12.webp"
     },
     {
     "id": 3,
@@ -24,7 +24,7 @@
     "year": 2023,
     "date": "2023-05-28",
     "src": "./img/original/2023/2023-05-28.webp",
-    "thumbnail": "./img/original/2023/thumb/2023-05-28.jpg"
+    "thumbnail": "./img/original/2023/thumb/2023-05-28.webp"
     },
     {
     "id": 4,
@@ -33,7 +33,7 @@
     "year": 2023,
     "date": "2023-09-17",
     "src": "./img/fanart/2023/2023-09-17.webp",
-    "thumbnail": "./img/fanart/2023/thumb/2023-09-17.jpg"
+    "thumbnail": "./img/fanart/2023/thumb/2023-09-17.webp"
     },
     {
     "id": 5,
@@ -42,7 +42,7 @@
     "year": 2023,
     "date": "2023-11-19",
     "src": "./img/fanart/2023/2023-11-19.webp",
-    "thumbnail": "./img/fanart/2023/thumb/2023-11-19.jpg"
+    "thumbnail": "./img/fanart/2023/thumb/2023-11-19.webp"
     },
     {
     "id": 6,
@@ -51,7 +51,7 @@
     "year": 2023,
     "date": "2023-12-02",
     "src": "./img/fanart/2023/2023-12-02.webp",
-    "thumbnail": "./img/fanart/2023/thumb/2023-12-02.jpg"
+    "thumbnail": "./img/fanart/2023/thumb/2023-12-02.webp"
     },
     {
     "id": 7,
@@ -60,7 +60,7 @@
     "year": 2023,
     "date": "2023-12-31",
     "src": "./img/original/2023/2023-12-31.webp",
-    "thumbnail": "./img/original/2023/thumb/2023-12-31.jpg"
+    "thumbnail": "./img/original/2023/thumb/2023-12-31.webp"
     },
     {
     "id": 8,
@@ -69,7 +69,7 @@
     "year": 2024,
     "date": "2024-03-20",
     "src": "./img/fanart/2024/2024-03-20.webp",
-    "thumbnail": "./img/fanart/2024/thumb/2024-03-20.jpg"
+    "thumbnail": "./img/fanart/2024/thumb/2024-03-20.webp"
     },
     {
     "id": 9,
@@ -78,7 +78,7 @@
     "year": 2024,
     "date": "2024-04-11",
     "src": "./img/fanart/2024/2024-04-11.webp",
-    "thumbnail": "./img/fanart/2024/thumb/2024-04-11.jpg"
+    "thumbnail": "./img/fanart/2024/thumb/2024-04-11.webp"
     },
     {
     "id": 10,
@@ -87,7 +87,7 @@
     "year": 2024,
     "date": "2024-06-23",
     "src": "./img/fanart/2024/2024-06-23.webp",
-    "thumbnail": "./img/fanart/2024/thumb/2024-06-23.jpg"
+    "thumbnail": "./img/fanart/2024/thumb/2024-06-23.webp"
     },
     {
     "id": 11,
@@ -96,7 +96,7 @@
     "year": 2024,
     "date": "2024-08-13",
     "src": "./img/fanart/2024/2024-08-13.webp",
-    "thumbnail": "./img/fanart/2024/thumb/2024-08-13.jpg"
+    "thumbnail": "./img/fanart/2024/thumb/2024-08-13.webp"
     },
     {
     "id": 12,
@@ -105,7 +105,7 @@
     "year": 2024,
     "date": "2024-08-18",
     "src": "./img/fanart/2024/2024-08-18.webp",
-    "thumbnail": "./img/fanart/2024/thumb/2024-08-18.jpg"
+    "thumbnail": "./img/fanart/2024/thumb/2024-08-18.webp"
     },
     {
     "id": 13,
@@ -114,7 +114,7 @@
     "year": 2024,
     "date": "2024-09-23",
     "src": "./img/original/2024/2024-09-23.webp",
-    "thumbnail": "./img/original/2024/thumb/2024-09-23.jpg"
+    "thumbnail": "./img/original/2024/thumb/2024-09-23.webp"
     },
     {
     "id": 14,
@@ -123,7 +123,7 @@
     "year": 2024,
     "date": "2024-11-20",
     "src": "./img/fanart/2024/2024-11-20.webp",
-    "thumbnail": "./img/fanart/2024/thumb/2024-11-20.jpg"
+    "thumbnail": "./img/fanart/2024/thumb/2024-11-20.webp"
     },
     {
     "id": 15,
@@ -132,7 +132,7 @@
     "year": 2024,
     "date": "2024-11-22",
     "src": "./img/fanart/2024/2024-11-22.webp",
-    "thumbnail": "./img/fanart/2024/thumb/2024-11-22.jpg"
+    "thumbnail": "./img/fanart/2024/thumb/2024-11-22.webp"
     },
     {
     "id": 16,
@@ -141,7 +141,7 @@
     "year": 2024,
     "date": "2024-11-24",
     "src": "./img/fanart/2024/2024-11-24.webp",
-    "thumbnail": "./img/fanart/2024/thumb/2024-11-24.jpg"
+    "thumbnail": "./img/fanart/2024/thumb/2024-11-24.webp"
     },
     {
     "id": 17,
@@ -150,7 +150,7 @@
     "year": 2024,
     "date": "2024-11-30",
     "src": "./img/fanart/2024/2024-11-30.webp",
-    "thumbnail": "./img/fanart/2024/thumb/2024-11-30.jpg"
+    "thumbnail": "./img/fanart/2024/thumb/2024-11-30.webp"
     },
     {
     "id": 18,
@@ -159,7 +159,7 @@
     "year": 2024,
     "date": "2024-12-21",
     "src": "./img/fanart/2024/2024-12-21.webp",
-    "thumbnail": "./img/fanart/2024/thumb/2024-12-21.jpg"
+    "thumbnail": "./img/fanart/2024/thumb/2024-12-21.webp"
     },
     {
     "id": 19,
@@ -168,7 +168,7 @@
     "year": 2025,
     "date": "2025-01-01",
     "src": "./img/fanart/2025/2025-01-01.webp",
-    "thumbnail": "./img/fanart/2025/thumb/2025-01-01.jpg"
+    "thumbnail": "./img/fanart/2025/thumb/2025-01-01.webp"
     },
     {
     "id": 20,
@@ -177,7 +177,7 @@
     "year": 2025,
     "date": "2025-02-01",
     "src": "./img/fanart/2025/2025-02-01.webp",
-    "thumbnail": "./img/fanart/2025/thumb/2025-02-01.jpg"
+    "thumbnail": "./img/fanart/2025/thumb/2025-02-01.webp"
     },
     {
     "id": 21,
@@ -186,7 +186,7 @@
     "year": 2025,
     "date": "2025-02-13",
     "src": "./img/fanart/2025/2025-02-13.webp",
-    "thumbnail": "./img/fanart/2025/thumb/2025-02-13.jpg"
+    "thumbnail": "./img/fanart/2025/thumb/2025-02-13.webp"
     },
     {
     "id": 22,
@@ -195,7 +195,7 @@
     "year": 2025,
     "date": "2025-03-14",
     "src": "./img/fanart/2025/2025-03-14.webp",
-    "thumbnail": "./img/fanart/2025/thumb/2025-03-14.jpg"
+    "thumbnail": "./img/fanart/2025/thumb/2025-03-14.webp"
     },
     {
     "id": 23,
@@ -204,7 +204,7 @@
     "year": 2025,
     "date": "2025-03-19",
     "src": "./img/fanart/2025/2025-03-19.webp",
-    "thumbnail": "./img/fanart/2025/thumb/2025-03-19.jpg"
+    "thumbnail": "./img/fanart/2025/thumb/2025-03-19.webp"
     },
     {
     "id": 24,
@@ -213,7 +213,7 @@
     "year": 2025,
     "date": "2025-05-07",
     "src": "./img/fanart/2025/2025-05-07.webp",
-    "thumbnail": "./img/fanart/2025/thumb/2025-05-07.jpg"
+    "thumbnail": "./img/fanart/2025/thumb/2025-05-07.webp"
     },
     {
     "id": 25,
@@ -222,7 +222,7 @@
     "year": 2025,
     "date": "2025-06-01",
     "src": "./img/original/2025/2025-06-01.webp",
-    "thumbnail": "./img/original/2025/thumb/2025-06-01.jpg"
+    "thumbnail": "./img/original/2025/thumb/2025-06-01.webp"
     },
     {
     "id": 26,
@@ -231,7 +231,7 @@
     "year": 2025,
     "date": "2025-06-18",
     "src": "./img/original/2025/2025-06-18.webp",
-    "thumbnail": "./img/original/2025/thumb/2025-06-18.jpg"
+    "thumbnail": "./img/original/2025/thumb/2025-06-18.webp"
     },
     {
     "id": 27,
@@ -240,7 +240,7 @@
     "year": 2025,
     "date": "2025-07-14",
     "src": "./img/original/2025/2025-07-14.webp",
-    "thumbnail": "./img/original/2025/thumb/2025-07-14.jpg"
+    "thumbnail": "./img/original/2025/thumb/2025-07-14.webp"
     },
     {
     "id": 28,
@@ -249,7 +249,7 @@
     "year": 2025,
     "date": "2025-08-04",
     "src": "./img/original/2025/2025-08-04.webp",
-    "thumbnail": "./img/original/2025/thumb/2025-08-04.jpg"
+    "thumbnail": "./img/original/2025/thumb/2025-08-04.webp"
     },
     {
     "id": 29,
@@ -258,7 +258,7 @@
     "year": 2025,
     "date": "2025-08-24",
     "src": "./img/original/2025/2025-08-24.webp",
-    "thumbnail": "./img/original/2025/thumb/2025-08-24.jpg"
+    "thumbnail": "./img/original/2025/thumb/2025-08-24.webp"
     },
     {
     "id": 30,
@@ -267,7 +267,7 @@
     "year": 2025,
     "date": "2025-09-13",
     "src": "./img/fanart/2025/2025-09-13.webp",
-    "thumbnail": "./img/fanart/2025/thumb/2025-09-13.jpg"
+    "thumbnail": "./img/fanart/2025/thumb/2025-09-13.webp"
     },
     {
     "id": 31,
@@ -276,7 +276,7 @@
     "year": 2025,
     "date": "2025-10-11",
     "src": "./img/original/2025/2025-10-11.webp",
-    "thumbnail": "./img/original/2025/thumb/2025-10-11.jpg"
+    "thumbnail": "./img/original/2025/thumb/2025-10-11.webp"
     },
     {
     "id": 32,
@@ -285,7 +285,7 @@
     "year": 2025,
     "date": "2025-10-25",
     "src": "./img/original/2025/2025-10-25.webp",
-    "thumbnail": "./img/original/2025/thumb/2025-10-25.jpg"
+    "thumbnail": "./img/original/2025/thumb/2025-10-25.webp"
     },
     {
     "id": 33,
@@ -294,7 +294,7 @@
     "year": 2025,
     "date": "2025-11-16",
     "src": "./img/original/2025/2025-11-16.webp",
-    "thumbnail": "./img/original/2025/thumb/2025-11-16.jpg"
+    "thumbnail": "./img/original/2025/thumb/2025-11-16.webp"
     },
     {
     "id": 34,
@@ -303,7 +303,7 @@
     "year": 2026,
     "date": "2026-01-25",
     "src": "./img/fanart/2026/2026-01-25.webp",
-    "thumbnail": "./img/fanart/2026/thumb/2026-01-25.jpg"
+    "thumbnail": "./img/fanart/2026/thumb/2026-01-25.webp"
     },
     {
     "id": 35,
@@ -312,6 +312,6 @@
     "year": 2026,
     "date": "2026-02-01",
     "src": "./img/original/2026/2026-02-01.webp",
-    "thumbnail": "./img/original/2026/thumb/2026-02-01.jpg"
+    "thumbnail": "./img/original/2026/thumb/2026-02-01.webp"
     }
 ]
