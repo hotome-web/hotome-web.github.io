@@ -46,7 +46,7 @@ footer * {
 .wrapper {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100dvh; /* スマホのために絶対dvhにすること */
 }
 
 /* main */
@@ -488,4 +488,4 @@ small {
 }
 
 
-/* 記述確認・挙動確認OKです！（2026.2.23-15:23） */
+/* 記述確認・挙動確認OKです！（2026.2.27-21:47） */
