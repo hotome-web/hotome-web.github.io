@@ -133,7 +133,7 @@
 
 /*========= text-bodyの中身（基本） =========*/
 .text-body {
-    line-height: 1.6; /* 行間の調整 */
+    line-height: 1.65; /* 行間の調整 */
     margin-top: 30px;
 }
 
