@@ -284,13 +284,13 @@
 ----------------------------------------*/
 
 .privacy-check {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-size: 1.4rem;
+    display: inline-flex;
+    align-items: center;
+    align-self: center;
     gap: 0.5em;
-    cursor: pointer;
     margin-top: 10px;
+    cursor: pointer;
 }
 
 /* チェックボックス本体 */
