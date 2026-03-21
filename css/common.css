@@ -35,7 +35,7 @@ header * {
 
 /* フッター下のフォントサイズ */
 footer * {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 }
 
 /*----------------------------------------
@@ -370,10 +370,21 @@ footer * {
     background-color: #3F474B;
 }
 
-/* copyrightのサイズ */
-small {
-    font-size: 1.2rem;
+.privacy {
+    transition: color 0.3s ease;
 }
+
+/* ★ PC用：hover ========= */
+@media (hover: hover) and (pointer: fine) {
+    .privacy:hover {
+        color: #fde5b2;
+    }
+}
+/* ★ スマホ用：タップ中だけ */
+.privacy:active {
+    color: #fde5b2;
+}
+/* ★ ここまで =========== */
 
 /*----------------------------------------
 	page topボタン
@@ -486,6 +497,32 @@ small {
         right: 3.5%;
     }
 }
+
+/*----------------------------------------
+	リンク装飾
+----------------------------------------*/
+
+.url-link {
+    font-weight: 700;
+    color: #4190b3;
+    border-bottom: 2px dotted #4190b3;
+    padding-bottom: 1px;
+    transition: color 0.15s ease, border-bottom-color 0.15s ease;
+}
+
+/* ★ PC用：hover ========= */
+@media (hover: hover) and (pointer: fine) {
+    .url-link:hover {
+        color: rgba(65, 145, 179, 0.7);
+        border-bottom: 2px dotted rgba(65, 145, 179, 0.7);
+    }
+}
+/* ★ スマホ用：タップ中だけ */
+.url-link:active {
+    color: rgba(65, 145, 179, 0.7);
+    border-bottom: 2px dotted rgba(65, 145, 179, 0.7);
+}
+/* ★ ここまで =========== */
 
 
 /* 記述確認・挙動確認OKです！（2026.2.27-21:47） */
