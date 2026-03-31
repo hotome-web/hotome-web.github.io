@@ -3,7 +3,7 @@
     "title": "Webサイトを作成しました！",
     "date": "2026-04-01T12:00:00",
     "year": "2026",
-    "thumbnail": "./2026/thumbnail/2026_04_01.webp",
-    "url": "./2026/2026_04_01.html"
+    "thumbnail": "/blog/2026/thumbnail/2026_04_01.webp",
+    "url": "/blog/2026/2026_04_01.html"
     }
 ]
