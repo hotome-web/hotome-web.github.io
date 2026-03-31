@@ -257,7 +257,7 @@ $(function () {
     const { page, year } = getParams();
     currentYear = year;
 
-    $.getJSON("../json/blog.json", function(data) {
+    $.getJSON("/json/blog.json", function(data) {
 
         data.sort((a, b) => new Date(b.date) - new Date(a.date));
 
