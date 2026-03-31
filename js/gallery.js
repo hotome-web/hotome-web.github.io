@@ -5,7 +5,7 @@ $(function() {
     let artworks = [];
 
     // JSON読み込み
-    $.getJSON('../json/gallery.json', function(data) {
+    $.getJSON('/json/gallery.json', function(data) {
 
         // ★ 新しい順に並び替え（date降順）
         artworks = data.sort((a, b) =>
