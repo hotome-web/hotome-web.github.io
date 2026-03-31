@@ -2,6 +2,28 @@
 
 $(function () {
 
+    // =========================
+    // シェアリンク自動生成
+    // =========================
+    const url = location.href;
+    const title = document.title;
+
+    // エンコード（重要）
+    const encodedUrl = encodeURIComponent(url);
+    const encodedTitle = encodeURIComponent(title);
+
+    // X
+    $('.share-X').attr(
+        'href',
+        `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`
+    );
+
+    // Bluesky
+    $('.share-Bluesky').attr(
+        'href',
+        `https://bsky.app/intent/compose?text=${encodedTitle}%20${encodedUrl}`
+    );
+
     $('.share-link').on('click', function () {
 
         const $btn = $(this);
