@@ -38,7 +38,7 @@ $(function() {
             success: function() {
 
                 // ★ 送信成功時
-                window.location.href = "/hotome/contact/thanks.html";
+                window.location.href = "/contact/thanks.html";
 
             },
 
@@ -47,7 +47,7 @@ $(function() {
                 // ★ 送信失敗時はボタンを戻す
                 $button.prop("disabled", false).text("送信する");
 
-                window.location.href = "/hotome/contact/error.html";
+                window.location.href = "/contact/error.html";
             }
         });
 
