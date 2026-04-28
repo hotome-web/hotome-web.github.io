@@ -313,5 +313,23 @@
     "date": "2026-02-01",
     "src": "/gallery/img/original/2026/2026-02-01.webp",
     "thumbnail": "/gallery/img/original/2026/thumb/2026-02-01.webp"
+    },
+    {
+    "id": 36,
+    "category": "original",
+    "title": "「　」",
+    "year": 2026,
+    "date": "2026-03-21",
+    "src": "/gallery/img/original/2026/2026-03-21.webp",
+    "thumbnail": "/gallery/img/original/2026/thumb/2026-03-21.webp"
+    },
+    {
+    "id": 37,
+    "category": "fanart",
+    "title": "やっふー！vsはぁーい！",
+    "year": 2026,
+    "date": "2026-04-19",
+    "src": "/gallery/img/fanart/2026/2026-04-19.webp",
+    "thumbnail": "/gallery/img/fanart/2026/thumb/2026-04-19.webp"
     }
 ]
