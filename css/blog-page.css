@@ -470,3 +470,53 @@
 	本文（text-body内）の装飾
     ↓ 随時、追加していってください！ ↓
 ----------------------------------------*/
+
+/*========= 動画（youtubeなど） =========*/
+.video {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.video-frame {
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.video iframe {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    display: block; /* 念のため */
+}
+
+.video-text {
+    font-size: 1.4rem;
+    text-align: center;
+    color: #646464;
+    margin-top: 5px;
+}
+
+
+/* ▼ スマホ（大） / 小型タブレット向け (540px以上） */
+@media (min-width: 540px) {
+    .video {
+        margin-top: 35px;
+        margin-bottom: 35px;
+    }
+
+    .video-text {
+        font-size: 1.5rem;
+        margin-top: 7px;
+    }
+}
+
+/* ▼ タブレット / 小型ノートPC向け （768px以上） */
+@media (min-width: 768px) {
+    .video {
+        margin-top: 45px;
+        margin-bottom: 45px;
+    }
+
+    .video-text {
+        margin-top: 10px;
+    }
+}
