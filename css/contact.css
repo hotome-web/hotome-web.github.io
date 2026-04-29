@@ -47,11 +47,6 @@
     margin-top: 10px;
 }
 
-.kome {
-    font-size: 1.35rem;
-    color: #646464;
-}
-
 
 /* ▼ タブレット / 小型ノートPC向け （768px以上） */
 @media (min-width: 768px) {
@@ -61,10 +56,6 @@
 
     .contact-notes > li + li {
         margin-top: 20px;
-    }
-
-    .kome {
-        font-size: 1.4rem;
     }
 }
 
@@ -85,10 +76,6 @@
     .my-address {
         font-size: 2rem;
         margin-top: 13px;
-    }
-
-    .kome {
-        font-size: 1.5rem;
     }
 }
 
